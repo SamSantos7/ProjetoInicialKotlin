@@ -1,0 +1,43 @@
+fun main(args: Array<String>) {
+2
+    println("Projeto Novo!")
+3
+    
+4
+    infix fun Int.times(str: String) = str.repeat(this)        // 1
+5
+  println(2 times "Oi ")                                    // 2
+6
+​
+7
+  val pair = "Inglaterra" to "Londres"                          // 3
+8
+  println(pair)
+9
+​
+10
+  infix fun String.onto(other: String) = Pair(this, other)   // 4
+11
+  val myPair = "Irlanda" onto "Dublin"
+12
+  println(myPair)
+13
+​
+14
+  val sophia = Person("Isadora")
+15
+  val claudia = Person("Ivana")
+16
+  sophia likes claudia    
+17
+}
+18
+​
+19
+class Person(val name: String) {
+20
+  val likedPeople = mutableListOf<Person>()
+21
+  infix fun likes(other: Person) { likedPeople.add(other) }  // 6
+22
+}
